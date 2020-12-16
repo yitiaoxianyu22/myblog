@@ -36,6 +36,10 @@ module.exports = {
                 'ARTS_1',
                 'ARTS_2',
                 'ARTS_3',
+                'ARTS_4',
+                'ARTS_5',
+                'ARTS_6',
+                'ARTS_7',
             ],
         },// 侧边栏配置
         sidebarDepth: 2, // 侧边栏显示2级
