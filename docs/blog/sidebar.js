@@ -1,6 +1,6 @@
-module.exports = [{
-    title: "博客",
-    children:[
+module.exports = [
+    // title: "博客",
+    // children:[
         {
             title: 'vue相关',
 
@@ -31,5 +31,5 @@ module.exports = [{
                 './git/1.git checkout的分支没有与远程分支关联',
             ]
         },
-    ]
-}];
+    // ]
+];

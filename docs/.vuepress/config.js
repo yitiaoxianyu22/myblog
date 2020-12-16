@@ -53,8 +53,8 @@ module.exports = {
 
         // 导航栏
         nav: [
-            {text: 'ARTS总结', link: '/arts/'},
-            {text: '博客', link: '/blog/'},
+            {text: 'ARTS总结', link: '/arts/2020/ARTS_1'},
+            {text: '博客', link: '/blog/vue/1.vue中引入静态第三方js文件'},
         ],
 
         // 侧边栏
