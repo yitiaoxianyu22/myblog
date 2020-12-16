@@ -1,47 +1,66 @@
 module.exports = {
-    title: '一条咸鱼',
+    base: '/',
+
+    // 语言
+    lang: 'zh-CN',
+
+    // 标题
+    title: '一条咸鱼的主页',
+
+    // 描述
     description: '咸鱼也有梦想',
-    serviceWorker: true,
-    // head: [ // 注入到当前页面的 HTML <head> 中的标签
-    //   ['link', { rel: 'icon', href: '/img/head.jpeg' }], // 标签里的头像
-    // ],
-    base: '/', // 这是部署到github相关的配置
+
+    // markdown显示行号
     markdown: {
-        lineNumbers: false // 代码块显示行号
+        lineNumbers: true
     },
+
+    // 自定义favicon
+    head: [
+        ['link', {rel: 'icon', href: '/img/avatar.jpg'}],
+        // ['meta', {name: 'google-site-verification', content: 'CKmN6S4eXG3UM1ZtPTtoNFeB7HoPSineeV6N0redyJM'}],
+        // ['meta', {name: 'baidu-site-verification', content: 'DHMDHUjY45'}]
+    ],
+
+    // 设置ga
+    // plugins: [
+    //     ['@vuepress/google-analytics', {
+    //         ga: 'UA-146806630-1'
+    //     }],
+    //     ['@vuepress/back-to-top'],
+    //     ['@vuepress/medium-zoom']
+    // ],
+
     themeConfig: {
-        nav: [ // 导航栏配置
-            {text: '首页', link: '/'},
-            {
-                text: '技术',
-                items: [
-                    {text: 'ARTS', link: '/arts/'}
-                ]
-            },
-            {
-                text: '链接',
-                items: [
-                    {text: 'csdn', link: 'https://blog.csdn.net/qq_38409264'},
-                    {text: 'github', link: 'https://github.com/yitiaoxianyu22'}
-                ]
+        // 你的GitHub仓库，请正确填写
+        repo: 'yitiaoxianyu22/myblog',
+
+        // 自定义仓库链接文字。
+        repoLabel: 'GitHub',
+
+        // 最后更新时间
+        lastUpdated: '更新时间',
+
+        // 刷新弹窗
+        serviceWorker: {
+            updatePopup: true,// Boolean | Object, 默认值是 undefined.
+            // 如果设置为 true, 默认的文本配置将是:
+            updatePopup: {
+                message: "有新内容",
+                buttonText: "刷新"
             }
-            // { text: '生活',link: '/life/' },
-            // { text: '思考',link: '/ponder/'},
-            // { text: '标签库', link: '/tags/' },
-            // { text: '关于', link:'/about/'},
+        },
+
+        // 导航栏
+        nav: [
+            {text: 'ARTS总结', link: '/arts/'},
+            {text: '博客', link: '/blog/'},
         ],
-        lastUpdated: 'Last Updated',
+
+        // 侧边栏
         sidebar: {
-            '/arts/': [
-                'ARTS_1',
-                'ARTS_2',
-                'ARTS_3',
-                'ARTS_4',
-                'ARTS_5',
-                'ARTS_6',
-                'ARTS_7',
-            ],
-        },// 侧边栏配置
-        sidebarDepth: 2, // 侧边栏显示2级
+            '/arts/': require('../arts/sidebar'),
+            '/blog/': require('../blog/sidebar'),
+        }
     }
-};
+}
